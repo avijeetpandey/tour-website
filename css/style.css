@@ -24,41 +24,36 @@ body {
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-
-.header__logobox {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center; }
+  .header__logobox {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
 
 .heading-primary {
-  color: #ffffff;
+  color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 6rem; }
-
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation: 1s ease-out moveInLeft; }
-
-.heading-primary--sub {
-  display: block;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  font-size: 2rem;
-  animation: 1s ease-out moveInRight; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: 1s ease-out moveInLeft; }
+  .heading-primary--sub {
+    display: block;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    font-size: 2rem;
+    animation: 1s ease-out moveInRight; }
 
 @keyframes moveInLeft {
   0% {
@@ -101,14 +96,19 @@ body {
 .btn:hover {
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.6) scaleY(1.4);
+    opacity: 0; }
 
 .btn:active {
   transform: translateY(-0.1rem);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .btn--white {
-  background-color: white;
+  background-color: #fff;
   color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
 
 .btn::after {
   content: "";
@@ -121,13 +121,6 @@ body {
   top: 0;
   z-index: -1;
   transition: all .3s; }
-
-.btn-white::after {
-  background-color: white; }
-
-.btn:hover::after {
-  transform: scaleX(1.6) scaleY(1.4);
-  opacity: 0; }
 
 .btn--animated {
   animation: moveUp .5s ease-out .75s;
