@@ -1,0 +1,75 @@
+.form{
+  &__group:not(:last-child){
+    margin-bottom: 2rem;
+
+  }
+
+  &__input{
+    padding:1.5rem 2rem;
+    font-size:1.5rem;
+    border-radius: 2px;
+    background-color: rgba($color-white,.5);
+    border:none;
+    font-family: inherit;
+    color:inherit;
+    border-bottom: 3px solid  transparent;
+    width: 90%;
+    display: block;
+
+    &:focus:invalid{
+      border-bottom: 3px solid  $color-secondary-dark;
+    }
+
+    &:focus{
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black,.1);
+      border-bottom: 3px solid  $color-primary;
+    }
+
+    &::-webkit-input-placeholder{
+      color:$color-grey-dark-2
+    }
+
+  }
+
+  &__label{
+    font-size:1.2rem;
+    font-weight: 700;
+    margin-left:2rem;
+    margin-top:.7rem;
+    display:block;
+    transition: all .3s;
+  }
+
+  // to select the sibling of the input ie the label , it has to be just after the input
+
+  &__input:placeholder-shown + &__label {
+      opacity: 0;
+      visibility: hidden;
+    transform: translateY(-4rem);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
