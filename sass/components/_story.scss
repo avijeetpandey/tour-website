@@ -1,0 +1,62 @@
+.story{
+  width:75%;
+  margin:0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black,.1);
+  background-color: $color-white;
+  border-radius:3px;
+  padding:6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  transform: skewX(-12deg);
+
+  & > *{
+    transform: skewX(12deg);
+  }
+
+  &__shape{
+    position: relative;
+    width:15rem;
+    height: 15rem;
+    float:left;
+    //shape outside defines what shape should the text float
+    shape-outside: circle(50% at 50% 50%); //this works only if elements have dimensions and floats
+    clip-path: circle(50% at 50% 50%);  // to make the element look like circle
+    transform: translateX(-3rem) skewX(12deg);
+  }
+
+  &__img{
+    height:100%;
+    transform:translateX(-4rem) scale(1.4);
+    backface-visibility: hidden;
+    transition: all .5s;
+  }
+
+  &__text{
+    transform: skewX(12deg);
+  }
+
+  &__caption{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,20%);
+    color:$color-white;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden;
+  }
+
+&:hover &__caption{
+  opacity:1;
+  transform: translate(-50%,-50%);
+}
+
+  &:hover &__img{
+    transform:translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%);
+  }
+
+}
